@@ -18,6 +18,23 @@ try{
 };
 
 
+/**
+ * GET /categories
+ * categories
+ */
+
+exports.exploreCategories= async (req, res) => {
+  try{
+    const limitNumber=20;
+    const categories=await Category.find({}).limit(limitNumber);
+    res.render('categories',{title:'Cooking Blog -Home',categories});
+  }catch(error){
+    res.status(500).send({message:error.message ||"Error occured"})
+  }
+  
+    res.render("index", { title: "Cooking blog - Home" });
+  };
+
 
 
 
