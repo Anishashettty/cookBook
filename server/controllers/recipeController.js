@@ -6,20 +6,16 @@ const Category = require("../modules/Category");
  */
 
 exports.homepage = async (req, res) => {
-    try {
-        const limitNumber = 5;
-        const categories=await Category.find({}).limit(limitNumner);
-        res.render('index', { title: 'Cooking Blog - Home', categories, food } );
-    } catch (error) {
-        res.status(500).send({message: error.message || "Error Occured" });
-  }
-  
+try{
+  const limitNumber=5;
+  const categories=await Category.find({}).limit(limitNumber);
+  res.render('index',{title:'Cooking Blog -Home',categories});
+}catch(error){
+  res.status(500).send({message:error.message ||"Error occured"})
 }
 
-
-
-
-
+  res.render("index", { title: "Cooking blog - Home" });
+};
 
 
 
