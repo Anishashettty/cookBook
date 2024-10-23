@@ -26,10 +26,7 @@ const recipeSchema = new mongoose.Schema({
     type: String,
     required: 'This field is required.'
   },
-  instructions:{
-    type: String,
-    required: 'This field is required.'
-  }
+  
 
 });
 
